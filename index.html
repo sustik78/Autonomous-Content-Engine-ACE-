@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ACE | Autonomous Content Engine</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero glass">
+        <div>
+          <p class="eyebrow">Enterprise Multi-Agent Operations</p>
+          <h1>ACE</h1>
+          <p class="hero-copy">
+            Autonomous Content Engine transforms raw text, PDFs, and structured product data into compliant,
+            localized, channel-ready campaigns with a transparent multi-agent workflow.
+          </p>
+        </div>
+        <div class="hero-metrics">
+          <article class="metric-tile">
+            <span>Architecture</span>
+            <strong>5 agents + orchestrator</strong>
+          </article>
+          <article class="metric-tile">
+            <span>Modes</span>
+            <strong>Text, PDF, Structured</strong>
+          </article>
+          <article class="metric-tile">
+            <span>Outputs</span>
+            <strong>Blog, LinkedIn, Twitter</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <section class="panel glass">
+          <div class="panel-head">
+            <h2>Workflow Control</h2>
+            <button id="runWorkflow" class="primary-btn">Run Workflow</button>
+          </div>
+
+          <label>
+            Product Name
+            <input id="productName" value="Autonomous Content Engine" />
+          </label>
+
+          <label>
+            Source Input
+            <textarea id="rawInput">ACE helps enterprise content teams transform raw product docs, campaign briefs, and research notes into governed multi-channel content with auditability and speed.</textarea>
+          </label>
+
+          <div class="grid-2">
+            <label>
+              Audience Persona
+              <select id="persona">
+                <option value="enterprise-cmo">Enterprise CMO</option>
+                <option value="technical-buyer">Technical Buyer</option>
+                <option value="startup-founder">Startup Founder</option>
+              </select>
+            </label>
+
+            <label>
+              Tone
+              <select id="tone">
+                <option value="corporate">Corporate</option>
+                <option value="formal">Formal</option>
+                <option value="casual">Casual</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="toggle-grid">
+            <label class="toggle-card">
+              <span>Human Approval</span>
+              <input id="humanApproval" type="checkbox" checked />
+            </label>
+            <label class="toggle-card">
+              <span>A/B Testing</span>
+              <input id="enableABTest" type="checkbox" checked />
+            </label>
+          </div>
+
+          <div class="grid-2">
+            <fieldset class="option-card">
+              <legend>Channels</legend>
+              <label><input type="checkbox" name="channel" value="blog" checked /> Blog</label>
+              <label><input type="checkbox" name="channel" value="linkedin" checked /> LinkedIn</label>
+              <label><input type="checkbox" name="channel" value="twitter" checked /> Twitter</label>
+            </fieldset>
+
+            <fieldset class="option-card">
+              <legend>Languages</legend>
+              <label><input type="checkbox" name="language" value="en" checked /> English</label>
+              <label><input type="checkbox" name="language" value="hi" checked /> Hindi</label>
+            </fieldset>
+          </div>
+
+          <label class="upload-card">
+            Knowledge-to-Content PDF Upload
+            <input id="pdfUpload" type="file" accept="application/pdf" />
+            <span id="uploadStatus">Upload a PDF to extract text locally in the browser.</span>
+          </label>
+
+          <div id="approvalBanner" class="approval-banner hidden">
+            <p id="approvalMessage"></p>
+            <div class="approval-actions">
+              <button id="approveWorkflow" class="primary-btn">Approve</button>
+              <button id="rejectWorkflow" class="secondary-btn">Reject</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel glass">
+          <div class="panel-head">
+            <h2>Pipeline Flow</h2>
+            <span id="statusPill" class="status-pill">idle</span>
+          </div>
+
+          <div id="pipeline" class="pipeline"></div>
+
+          <div class="metrics-row">
+            <article class="metric-tile">
+              <span>Time Saved</span>
+              <strong id="timeSaved">0h</strong>
+            </article>
+            <article class="metric-tile">
+              <span>Consistency</span>
+              <strong id="consistencyScore">0/100</strong>
+            </article>
+            <article class="metric-tile">
+              <span>Automation</span>
+              <strong id="automationScore">0%</strong>
+            </article>
+          </div>
+
+          <div class="log-section">
+            <div class="panel-head compact">
+              <h3>Real-Time Agent Decisions</h3>
+            </div>
+            <div id="logFeed" class="log-feed"></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="output-grid">
+        <article class="panel glass">
+          <div class="panel-head compact">
+            <h2>Generated Content</h2>
+          </div>
+          <div id="generatedContent" class="content-block empty-state">Run the workflow to generate content.</div>
+        </article>
+
+        <article class="panel glass">
+          <div class="panel-head compact">
+            <h2>Compliance Review</h2>
+          </div>
+          <div id="complianceContent" class="content-block empty-state">Compliance suggestions will appear here.</div>
+        </article>
+
+        <article class="panel glass">
+          <div class="panel-head compact">
+            <h2>Localization</h2>
+          </div>
+          <div id="localizationContent" class="stack-list empty-state">Localized variants will appear here.</div>
+        </article>
+
+        <article class="panel glass">
+          <div class="panel-head compact">
+            <h2>Distribution</h2>
+          </div>
+          <div id="distributionContent" class="stack-list empty-state">Formatted posts and simulated publishing results will appear here.</div>
+        </article>
+
+        <article class="panel glass">
+          <div class="panel-head compact">
+            <h2>Analytics + A/B Test</h2>
+          </div>
+          <div id="analyticsContent" class="stack-list empty-state">Analytics and recommendations will appear here.</div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

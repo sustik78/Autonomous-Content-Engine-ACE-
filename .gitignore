@@ -1,0 +1,12 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+ace/
+*.log
+.env
+.env.local
+.env.*.local
+Screen_Recording.mp4
+*.tsbuildinfo
