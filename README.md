@@ -75,4 +75,4 @@ npm run build
 
 ## License
 
-This project was prepared for hackathon demonstration and evaluation.
+This project was prepared for ET GEN AI Hackathon, Phase 2: Build Sprint - Prototype Submission.
